@@ -10,9 +10,10 @@ export async function generateSitemaps() {
   }));
 }
 
-export default async function sitemap({ id }) {
-  // `id` is passed from generateSitemaps, but can be a string depending on Next.js version.
-  const chunkId = Number(id);
+export default async function sitemap(props) {
+  // Await the id promise from Next.js 16+, with a safe fallback to 0 if undefined
+  const resolvedId = props?.id ? await props.id : 0;
+  const chunkId = Number(resolvedId) || 0;
   const sitemapUrls = [];
 
   // Add static routes only in the first sitemap chunk
