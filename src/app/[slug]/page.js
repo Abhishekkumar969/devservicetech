@@ -6,6 +6,11 @@ import { notFound } from "next/navigation";
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   
+  // Prevent catching metadata files like sitemap.xml
+  if (slug.endsWith('.xml')) {
+    notFound();
+  }
+  
   // Try to find the matching SEO info
   const city = getCityFromSlug(slug);
   
@@ -29,6 +34,10 @@ export async function generateMetadata({ params }) {
 
 export default async function SeoLocationPage({ params }) {
   const { slug } = await params;
+  
+  if (slug.endsWith('.xml')) {
+    notFound();
+  }
   
   const city = getCityFromSlug(slug);
   
