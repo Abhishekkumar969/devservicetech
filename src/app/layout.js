@@ -41,6 +41,8 @@ export const metadata = {
   ],
   icons: {
     icon: '/images/devservicetech.jpg',
+    shortcut: '/images/devservicetech.jpg',
+    apple: '/images/devservicetech.jpg',
   },
 };
 
