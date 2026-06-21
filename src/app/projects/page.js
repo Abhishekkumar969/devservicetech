@@ -25,7 +25,7 @@ export default function ProjectsPage() {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
   const [pendingProject, setPendingProject] = useState(null);
-  
+
   // Auth State
   const [user, setUser] = useState(null);
   const [name, setName] = useState("");
@@ -67,7 +67,7 @@ export default function ProjectsPage() {
         const { createUserWithEmailAndPassword } = await import("firebase/auth");
         const { doc, setDoc } = await import("firebase/firestore");
         const { db } = await import("@/lib/firebase");
-        
+
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         await setDoc(doc(db, "users", userCredential.user.uid), {
           name,
@@ -77,7 +77,7 @@ export default function ProjectsPage() {
       } else {
         await signInWithEmailAndPassword(auth, email, password);
       }
-      
+
       setShowLoginModal(false);
       if (pendingProject) executeAddToCart(pendingProject);
     } catch (err) {
@@ -89,7 +89,7 @@ export default function ProjectsPage() {
     const provider = new GoogleAuthProvider();
     try {
       const userCredential = await signInWithPopup(auth, provider);
-      
+
       // Ensure profile exists in DB
       const { doc, setDoc } = await import("firebase/firestore");
       const { db } = await import("@/lib/firebase");
@@ -136,10 +136,10 @@ export default function ProjectsPage() {
                   </div>
                   <h3 className={styles.cardTitle}>{project.title}</h3>
                   <p className={styles.cardDesc}>{project.desc}</p>
-                  
-                  <button 
-                    onClick={() => inCart ? router.push("/cart") : handleAddToCart(project)} 
-                    className={`btn ${inCart ? 'btn-outline' : 'btn-primary'}`} 
+
+                  <button
+                    onClick={() => inCart ? router.push("/cart") : handleAddToCart(project)}
+                    className={`btn ${inCart ? 'btn-outline' : 'btn-primary'}`}
                     style={{ width: "100%" }}
                   >
                     {inCart ? "Go to Cart" : "Add to Cart"}
@@ -160,7 +160,7 @@ export default function ProjectsPage() {
             <p className={styles.modalSubtitle}>
               {isSignup ? "Sign up to purchase projects." : "Please log in to browse and add projects to your cart."}
             </p>
-            
+
             {error && <div className={styles.errorText}>{error}</div>}
 
             <form onSubmit={handleModalAuth} className={styles.modalForm}>
@@ -173,17 +173,17 @@ export default function ProjectsPage() {
                 {isSignup ? "Sign Up" : "Log In"}
               </button>
             </form>
-            
+
             <div style={{ textAlign: "center", margin: "1rem 0", color: "var(--foreground-muted)" }}>OR</div>
-            
+
             <button onClick={handleModalGoogleLogin} className="btn btn-outline" style={{ width: "100%" }}>
               Continue with Google
             </button>
 
             <p style={{ textAlign: "center", marginTop: "1.5rem", fontSize: "0.9rem", color: "var(--foreground-muted)" }}>
               {isSignup ? "Already have an account? " : "Don't have an account? "}
-              <button 
-                onClick={() => { setIsSignup(!isSignup); setError(""); }} 
+              <button
+                onClick={() => { setIsSignup(!isSignup); setError(""); }}
                 style={{ background: "none", border: "none", color: "var(--primary)", fontWeight: "600", cursor: "pointer" }}
               >
                 {isSignup ? "Log in" : "Sign up"}

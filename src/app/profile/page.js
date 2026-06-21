@@ -14,19 +14,6 @@ export default function ProfilePage() {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-      if (!currentUser) {
-        router.push("/login");
-      } else {
-        setUser(currentUser);
-        await fetchPurchases(currentUser.uid);
-      }
-      setLoading(false);
-    });
-    return () => unsubscribe();
-  }, [router]);
-
   const fetchPurchases = async (userId) => {
     try {
       const q = query(collection(db, "orders"), where("userId", "==", userId), where("status", "==", "paid"));
@@ -44,6 +31,19 @@ export default function ProfilePage() {
       console.error("Error fetching purchases", err);
     }
   };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      if (!currentUser) {
+        router.push("/login");
+      } else {
+        setUser(currentUser);
+        await fetchPurchases(currentUser.uid);
+      }
+      setLoading(false);
+    });
+    return () => unsubscribe();
+  }, [router]);
 
   const handleLogout = async () => {
     await signOut(auth);
