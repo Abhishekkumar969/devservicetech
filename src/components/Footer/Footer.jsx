@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "./Footer.module.css";
 import { allIndianCities } from "@/data/cities";
 import SeoFooterLink from "./SeoFooterLink";
+import CopyrightText from "./CopyrightText";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,15 +13,9 @@ export default function Footer() {
       <div className="container">
         {/* Legal Disclaimer */}
         <div className={styles.legalDisclaimer}>
-          <p>This website and its content is copyright of [DevService Tech] - &copy; [DevService Tech] [2015]. All rights reserved.</p>
-          <p>Any redistribution or reproduction of part or all of the contents in any form is prohibited other than the following:</p>
-          <ol>
-            <li>You may print or download to a local hard disk extracts for your personal and non-commercial use only.</li>
-            <li>You may copy the content to individual third parties for their personal use, but only if you acknowledge the website as the source of the material.</li>
-          </ol>
-          <p className={styles.legalWarning}>
-            You may not, except with our express written permission, distribute or commercially exploit the content. Nor may you transmit it or store it in any other website or other form of electronic retrieval system.
-          </p>
+          <p>Copyright &copy; {currentYear} DevService Tech. All rights reserved.</p>
+          <p>DevService Tech is a premier digital agency specializing in Web Design, Software Development, and SEO Services.</p>
+          <p>We are dedicated to building scalable, modern, and highly performant digital solutions tailored to your brand's unique needs. Unauthorized copying, distribution, or reproduction of any materials from this website is strictly prohibited.</p>
         </div>
 
         {/* Grid Layout */}
@@ -94,7 +89,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className={styles.bottom}>
-          <p>Copyright&copy;2026 DevService Tech (Development and service technology). All rights reserved</p>
+          <CopyrightText />
         </div>
       </div>
     </footer>

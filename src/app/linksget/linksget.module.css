@@ -1,0 +1,80 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: var(--font-inter), sans-serif;
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+}
+
+.totalLinks {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--foreground);
+  margin-bottom: 40px;
+  padding: 10px 20px;
+  background-color: var(--background-alt);
+  border-radius: 8px;
+  display: inline-block;
+  border: 1px solid var(--border);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.categoryBlock {
+  background: var(--background-dark);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+}
+
+.categoryTitle {
+  font-size: 1.5rem;
+  color: var(--primary-dark);
+  margin-bottom: 5px;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 10px;
+}
+
+.categoryCount {
+  font-size: 0.9rem;
+  color: var(--foreground-muted);
+  margin-bottom: 20px;
+}
+
+.linksList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.linksList li a {
+  text-decoration: none;
+  color: var(--foreground);
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: var(--background-alt);
+  border: 1px solid transparent;
+}
+
+.linksList li a:hover {
+  color: var(--primary-dark);
+  border-color: var(--primary);
+  background: var(--background);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}

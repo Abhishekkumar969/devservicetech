@@ -53,7 +53,7 @@
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   margin-top: 3rem;
   padding-top: 3rem;
@@ -71,13 +71,95 @@
   font-weight: 500;
 }
 
+.coreValuesSection {
+  margin-top: 5rem;
+  padding-top: 5rem;
+  border-top: 1px solid var(--border);
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.valueCard {
+  background: var(--background-alt);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.valueCard h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.valueCard p {
+  color: var(--foreground-muted);
+  line-height: 1.6;
+}
+
+.whyChooseUsSection {
+  margin-top: 5rem;
+  padding: 4rem;
+  background: var(--background-dark);
+  border-radius: 1rem;
+}
+
+.benefitsList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.benefitsList li {
+  font-size: 1.1rem;
+  padding-left: 2rem;
+  position: relative;
+  color: var(--foreground-muted);
+}
+
+.benefitsList li strong {
+  color: var(--foreground);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.benefitsList li::before {
+  content: "✓";
+  color: var(--primary);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   .content {
     grid-template-columns: 1fr;
   }
   
   .stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     text-align: center;
+  }
+
+  .benefitsList {
+    grid-template-columns: 1fr;
+  }
+
+  .whyChooseUsSection {
+    padding: 2rem;
   }
 }

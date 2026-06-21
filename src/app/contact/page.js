@@ -167,6 +167,49 @@ export default function Contact() {
             </form>
           </div>
         </div>
+
+        {/* Section 2: What Happens Next */}
+        <div className={styles.nextStepsSection}>
+          <h2 className={styles.sectionTitle}>What Happens Next?</h2>
+          <div className={styles.stepsGrid}>
+            <div className={styles.stepCard}>
+              <h4>1. We Review</h4>
+              <p>Our team carefully reviews your inquiry to understand your needs.</p>
+            </div>
+            <div className={styles.stepCard}>
+              <h4>2. We Connect</h4>
+              <p>We'll reach out within 24 hours to schedule a detailed discovery call.</p>
+            </div>
+            <div className={styles.stepCard}>
+              <h4>3. We Propose</h4>
+              <p>You receive a custom proposal and project timeline tailored to you.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 3: Global Reach */}
+        <div className={styles.globalSection}>
+          <div className={styles.globalContent}>
+            <h2>Serving Clients Globally</h2>
+            <p>While our headquarters is proudly located in Bihar, India, we work with clients across the globe. We adapt to your time zone to ensure seamless communication and project delivery.</p>
+          </div>
+        </div>
+
+        {/* Section 4: Contact FAQ */}
+        <div className={styles.contactFaq}>
+          <h2 className={styles.sectionTitle}>Quick FAQs</h2>
+          <div className={styles.faqList}>
+            <div className={styles.faqCard}>
+              <h5>Do you accept small projects?</h5>
+              <p>Yes, we work with startups and small businesses to deliver high-quality, scalable solutions.</p>
+            </div>
+            <div className={styles.faqCard}>
+              <h5>How do we communicate?</h5>
+              <p>We use tools like Slack, Google Meet, and Email to ensure transparent and regular updates.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );

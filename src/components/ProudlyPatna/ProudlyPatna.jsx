@@ -8,10 +8,10 @@ export default function ProudlyPatna({ city = "India" }) {
       <div className={styles.container}>
         <div className={styles.content}>
           <h2 className={styles.title}>
-            Proudly Based in {city},<br /> Working With Clients Worldwide
+            Local Roots in {city},<br /> Serving Clients Globally
           </h2>
           <p className={styles.description}>
-            Whether you're in {city} or International, we bring world-class digital solutions to your doorstep. At DevService Tech, we're not just another tech agency—we're a Global creative powerhouse. Whether you're a startup ready to launch or an established brand aiming to elevate, our mission is simple: turn your vision into a powerful digital reality. With years of experience, a passionate team, and a portfolio that speaks for itself, we specialize in crafting pixel-perfect websites, impactful marketing strategies, and innovative software solutions that help your business grow, scale, and thrive online.
+            No matter where you are located, we deliver top-tier digital services right to you. DevService Tech is more than a standard agency; we are your dedicated tech partners. From new startups to large enterprises, our goal is to bring your digital dreams to life. Backed by an experienced and passionate team, we build stunning websites, smart software, and strong online strategies. We are committed to helping your brand succeed, scale up, and shine in the digital world.
           </p>
           
           <Link href="/about-us" className={styles.link}>

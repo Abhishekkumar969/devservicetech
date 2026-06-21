@@ -7,29 +7,29 @@ export default function ProfessionalDesigners() {
       <div className={styles.container}>
         <div className={styles.content}>
           <h2 className={styles.title}>
-            Professional Website Designers with Standout Results
+            Masterful Software Architects & Web Designers
           </h2>
           <p className={styles.description}>
-            DevService Tech (Development and service technology) experts are experienced website designers and developers. Vetted for their years of experience and quality of work, DevService Tech (Development and service technology) Experts can help you polish an existing website, or build a new website from scratch.
+            Our team at DevService Tech is driven by a passion for excellence. We don't just write code or design graphics; we architect complete digital ecosystems. From responsive landing pages to complex enterprise software, we bring your vision to life.
           </p>
           
           <div className={styles.features}>
             <div>
-              <h3 className={styles.featureTitle}>Save time</h3>
+              <h3 className={styles.featureTitle}>Accelerate Your Growth</h3>
               <p className={styles.featureText}>
-                You're busy. Spend time where you're needed most and let a seasoned professional work their magic.
+                We build tools and platforms that streamline your operations and boost your conversions, allowing you to focus on scaling your business.
               </p>
             </div>
             <div>
-              <h3 className={styles.featureTitle}>Get custom work</h3>
+              <h3 className={styles.featureTitle}>Bespoke Engineering</h3>
               <p className={styles.featureText}>
-                Whether you have specific feature requirements or need custom coding, an Expert can bring your vision to life.
+                No off-the-shelf templates. Every project is meticulously crafted from scratch to align flawlessly with your brand identity and technical requirements.
               </p>
             </div>
             <div>
-              <h3 className={styles.featureTitle}>Lean on expertise</h3>
+              <h3 className={styles.featureTitle}>Reliable Partnership</h3>
               <p className={styles.featureText}>
-                Work with a pro who knows exactly how to make your website perform its best.
+                We prioritize transparency, security, and long-term support, ensuring your digital assets remain robust and secure for years to come.
               </p>
             </div>
           </div>

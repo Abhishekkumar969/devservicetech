@@ -12,7 +12,7 @@ export default function ServicesSplit() {
           <div className={styles.content}>
             <h2 className={styles.title}>Web Design</h2>
             <p className={styles.description}>
-              Transform your vision into reality with our creative and responsive web design services.
+              Get a modern, fast, and mobile-friendly website that perfectly represents your brand and attracts more customers.
             </p>
             <Link href="/contact?service=Website%20Design" className={styles.link}>
               Contact Now <ChevronRight size={20} />
@@ -37,7 +37,7 @@ export default function ServicesSplit() {
           <div className={styles.content}>
             <h2 className={styles.title}>Software Development</h2>
             <p className={styles.description}>
-              We use storytelling to create a deeper connection with your audience. We brainstorm multi-channel marketing tactics to get you noticed. We leverage the power of imagination and the accuracy of data to revise, amend, and repeat what's working.
+              We build custom software, web apps, and digital tools designed to solve your unique business challenges and streamline your operations.
             </p>
             <Link href="/contact?service=Software%20Development" className={styles.link}>
               Contact Now <ChevronRight size={20} />
@@ -46,7 +46,7 @@ export default function ServicesSplit() {
           
           <div className={styles.imageWrapper}>
             <Image 
-              src="/images/sushi_website.png" 
+              src="/images/cafe_website.png" 
               alt="Software Development Campaign" 
               width={600} 
               height={400} 

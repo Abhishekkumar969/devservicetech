@@ -9,11 +9,11 @@ export default function Hero({ city = "India" }) {
       <div className={styles.container}>
         <div className={styles.content}>
           <h1 className={styles.title}>
-            {city}'s Trusted Website Design & Software Development Agency
+            Top Web Design & Software Solutions in {city}
           </h1>
           
           <p className={styles.description}>
-            From modern websites to high-performing marketing campaigns, we help local businesses stand out and scale faster online.
+            We build beautiful websites and powerful software to help your business grow online quickly and easily.
           </p>
 
           <div className={styles.featuresList}>

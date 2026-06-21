@@ -1,0 +1,183 @@
+.section {
+  padding: 8rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.textContent {
+  flex: 1;
+  max-width: 500px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(var(--primary-rgb), 0.1);
+  color: var(--primary);
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  color: var(--foreground-muted);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.servicesList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.servicesList li {
+  position: relative;
+  padding-left: 2rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.servicesList li::before {
+  content: "→";
+  color: var(--primary);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Visuals Container */
+.visuals {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Laptop Mockup (CSS) */
+.laptopMockup {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+}
+
+.laptopScreen {
+  width: 90%;
+  aspect-ratio: 16/10;
+  margin: 0 auto;
+  background: var(--background-dark);
+  border: 12px solid #222;
+  border-radius: 12px 12px 0 0;
+  border-bottom: 2px solid #444;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.placeholderContent {
+  text-align: center;
+  color: var(--foreground-muted);
+}
+
+.laptopKeyboard {
+  width: 100%;
+  height: 20px;
+  background: #333;
+  border-radius: 0 0 16px 16px;
+  position: relative;
+  box-shadow: inset 0 -4px 10px rgba(0,0,0,0.5);
+}
+
+.laptopKeyboard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15%;
+  height: 4px;
+  background: #111;
+  border-radius: 0 0 4px 4px;
+}
+
+/* Mobile Mockup (CSS) */
+.mobileMockup {
+  position: absolute;
+  bottom: -30px;
+  right: -20px;
+  width: 150px;
+  height: 300px;
+  background: var(--background-alt);
+  border: 8px solid #111;
+  border-radius: 24px;
+  box-shadow: -10px 20px 40px rgba(0,0,0,0.4);
+  overflow: hidden;
+  z-index: 10;
+  animation: float 6s ease-in-out infinite;
+}
+
+.mobileScreen {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--background), var(--background-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholderContentMobile {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .textContent {
+    margin-bottom: 3rem;
+  }
+
+  .servicesList li {
+    padding-left: 0;
+  }
+  .servicesList li::before {
+    display: none;
+  }
+  .mobileMockup {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: -50px;
+  }
+}
