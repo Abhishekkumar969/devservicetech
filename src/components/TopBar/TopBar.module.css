@@ -1,0 +1,70 @@
+.topbar {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.contactInfo {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcons a {
+  color: white;
+  transition: opacity 0.2s ease;
+}
+
+.socialIcons a:hover {
+  opacity: 0.8;
+}
+
+.mobilePhone {
+  display: none;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+  .contactInfo {
+    display: none;
+  }
+  .tagline {
+    display: block;
+    text-align: left !important;
+    font-size: 0.65rem !important;
+    max-width: 50%;
+  }
+  .mobilePhone {
+    display: block;
+  }
+  .socialIcons {
+    gap: 0.6rem;
+  }
+}

@@ -1,0 +1,29 @@
+.section {
+  padding: 6rem 0;
+  background-color: var(--background);
+  text-align: center;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.title {
+  font-family: var(--font-playfair), serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--foreground);
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+
+.description {
+  font-size: 1.125rem;
+  color: var(--foreground-muted);
+  line-height: 1.8;
+  text-align: justify;
+  text-align-last: center;
+}

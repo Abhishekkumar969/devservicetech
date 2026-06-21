@@ -1,0 +1,85 @@
+.marqueeContainer {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--background-alt);
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Gradient fades on the edges for a smoother effect */
+.marqueeContainer::before,
+.marqueeContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marqueeContainer::before {
+  left: 0;
+  background: linear-gradient(to right, var(--background-alt), transparent);
+}
+
+.marqueeContainer::after {
+  right: 0;
+  background: linear-gradient(to left, var(--background-alt), transparent);
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+  gap: 4rem;
+  padding: 0 2rem;
+}
+
+.marqueeTrack:hover {
+  animation-play-state: paused;
+}
+
+.logoItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--foreground-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.logoItem:hover {
+  opacity: 1;
+  color: var(--primary);
+  transform: scale(1.05);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Since we have duplicate items, translating by exactly 50% seamlessly loops */
+    transform: translateX(calc(-50% - 2rem));
+  }
+}
+
+@media (max-width: 768px) {
+  .logoItem {
+    font-size: 1.25rem;
+  }
+  .marqueeContainer::before,
+  .marqueeContainer::after {
+    width: 80px;
+  }
+}

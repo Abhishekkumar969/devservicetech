@@ -1,0 +1,115 @@
+.header {
+  background-color: var(--background);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logoTextWrapper {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logoMain {
+  font-family: var(--font-playfair), serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -1px;
+}
+
+.logoSub {
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  color: var(--foreground-muted);
+}
+
+.logoTagline {
+  border-left: 1px solid var(--border);
+  padding-left: 1rem;
+  font-size: 0.85rem;
+  color: var(--foreground-muted);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.menuItem {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--foreground);
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.menuItem:hover, .active {
+  color: var(--primary);
+}
+
+.mobileToggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--foreground);
+}
+
+@media (max-width: 992px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--background);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+  
+  .navOpen .menu {
+    display: flex;
+  }
+
+  .menuItem {
+    padding: 1rem 2rem;
+    display: block;
+    width: 100%;
+  }
+
+  .mobileToggle {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .logoTagline {
+    display: none;
+  }
+  .logoMain {
+    font-size: 1.5rem;
+  }
+  .logoSub {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+  }
+}
