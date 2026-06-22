@@ -6,6 +6,12 @@
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding: 5rem 0;
+  }
+}
+
 .backgroundEffect {
   position: absolute;
   top: 50%;
@@ -74,5 +80,17 @@
   .buttonGroup {
     flex-direction: column;
     gap: 1rem;
+  }
+  .ctaBtn, .secondaryBtn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+  .description {
+    font-size: 1.1rem;
   }
 }

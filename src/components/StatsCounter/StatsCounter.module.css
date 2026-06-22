@@ -35,7 +35,36 @@
 
 @media (max-width: 768px) {
   .container {
-    flex-direction: column;
-    gap: 4rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: space-between;
+  }
+  .statItem {
+    flex: 1 1 40%;
+  }
+  .value {
+    font-size: 2.2rem;
+  }
+  .label {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  .statItem {
+    flex: 1;
+  }
+  .value {
+    font-size: 1.5rem;
+  }
+  .label {
+    font-size: 0.65rem;
+    letter-spacing: 0;
   }
 }

@@ -5,6 +5,12 @@
   background: radial-gradient(circle at left, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -34,6 +40,18 @@
   font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.85rem;
+  }
 }
 
 .description {
@@ -176,9 +194,10 @@
   .container {
     flex-direction: column-reverse;
     text-align: center;
+    gap: 3rem;
   }
   .textContent {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
   .servicesList li {
     padding-left: 0;
@@ -187,6 +206,40 @@
     display: none;
   }
   .statsFloat {
-    right: 10px;
+    right: -10px;
+    top: -30px;
+    transform: scale(0.85);
+    transform-origin: top right;
+  }
+  .socialFloat {
+    left: -10px;
+    transform: scale(0.85);
+    transform-origin: bottom left;
+  }
+  .chartContainer {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .bars {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .statsFloat {
+    top: -40px;
+    right: -15px;
+    transform: scale(0.7);
+  }
+  .socialFloat {
+    left: -15px;
+    transform: scale(0.7);
+  }
+  .chartContainer {
+    padding: 1.5rem;
+    height: 280px;
+  }
+  .bars {
+    height: 140px;
   }
 }
