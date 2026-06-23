@@ -5,6 +5,7 @@ import FloatingActions from "../components/FloatingActions/FloatingActions";
 import Footer from "../components/Footer/Footer";
 import DisableInspect from "../components/DisableInspect/DisableInspect";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -31,9 +32,9 @@ export const metadata = {
     // Short-tail keywords
     "web design", "software development", "SEO services", "e-commerce solutions", "logo design", "tech agency", "DevService Tech (Development and service technology)", "global digital agency",
     // Long-tail keywords
-    "best global website design company", 
-    "top software development agency worldwide", 
-    "affordable SEO services for small businesses", 
+    "best global website design company",
+    "top software development agency worldwide",
+    "affordable SEO services for small businesses",
     "custom software development company global",
     "e-commerce website development worldwide",
     "api integration services in India",
@@ -58,6 +59,7 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <Footer />
         <FloatingActions />
+        <SpeedInsights />
       </body>
     </html>
   );
