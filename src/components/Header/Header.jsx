@@ -42,7 +42,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.headerInner}`}>
         <nav className={`${styles.nav} ${isOpen ? styles.navOpen : ""}`}>
-          <Link prefetch={false} prefetch={false} href="/" className={styles.logoContainer}>
+          <Link prefetch={false} href="/" className={styles.logoContainer}>
             <div className={styles.logoTextWrapper}>
               <span className={styles.logoMain}>DevService</span>
               <span className={styles.logoSub}>TECH</span>
