@@ -70,7 +70,7 @@ export default function PricingPlans() {
                 ))}
               </ul>
               
-              <Link href="/contact" className={`btn ${plan.isPopular ? "btn-primary" : "btn-outline"} ${styles.btn}`}>
+              <Link prefetch={false} href="/contact" className={`btn ${plan.isPopular ? "btn-primary" : "btn-outline"} ${styles.btn}`}>
                 Get Started
               </Link>
             </div>

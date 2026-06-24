@@ -118,7 +118,7 @@ export default function CartPage() {
       <div className={styles.section}>
         <div className="container" style={{ textAlign: "center", padding: "4rem 0" }}>
           <h2>Your Cart is Empty</h2>
-          <Link href="/projects" className="btn btn-primary" style={{ marginTop: "1rem" }}>Browse Projects</Link>
+          <Link prefetch={false} href="/projects" className="btn btn-primary" style={{ marginTop: "1rem" }}>Browse Projects</Link>
         </div>
       </div>
     );

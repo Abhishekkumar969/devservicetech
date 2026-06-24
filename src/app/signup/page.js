@@ -83,7 +83,7 @@ export default function SignupPage() {
           </button>
 
           <p className={styles.footerText}>
-            Already have an account? <Link href="/login" className={styles.link}>Log in</Link>
+            Already have an account? <Link prefetch={false} href="/login" className={styles.link}>Log in</Link>
           </p>
         </div>
       </div>

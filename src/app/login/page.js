@@ -65,7 +65,7 @@ export default function LoginPage() {
           </button>
 
           <p className={styles.footerText}>
-            Don't have an account? <Link href="/signup" className={styles.link}>Sign up</Link>
+            Don't have an account? <Link prefetch={false} href="/signup" className={styles.link}>Sign up</Link>
           </p>
         </div>
       </div>

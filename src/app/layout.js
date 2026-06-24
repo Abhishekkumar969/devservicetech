@@ -5,7 +5,8 @@ import FloatingActions from "../components/FloatingActions/FloatingActions";
 import Footer from "../components/Footer/Footer";
 import DisableInspect from "../components/DisableInspect/DisableInspect";
 import "./globals.css";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+
+export const revalidate = 604800; // 7 days cache
 
 const inter = Inter({
   variable: "--font-inter",
@@ -59,7 +60,6 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <Footer />
         <FloatingActions />
-        <SpeedInsights />
       </body>
     </html>
   );

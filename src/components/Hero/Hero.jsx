@@ -29,17 +29,17 @@ export default function Hero({ city = "India" }) {
           </div>
 
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginTop: "1.5rem" }}>
-            <Link href="/contact" className={styles.link}>
+            <Link prefetch={false} href="/contact" className={styles.link}>
               Get Started <ChevronRight size={20} />
             </Link>
-            <Link href="/projects" className="btn btn-secondary" style={{ color: "var(--foreground)" }}>
+            <Link prefetch={false} href="/projects" className="btn btn-secondary" style={{ color: "var(--foreground)" }}>
               Our Super Projects
             </Link>
           </div>
         </div>
         
         <div className={styles.imageWrapper} style={{ pointerEvents: 'none' }}>
-          <Image 
+          <Image unoptimized 
             src="/images/hero_image.png" 
             alt="DevService Tech (Development and service technology) Team" 
             width={600} 

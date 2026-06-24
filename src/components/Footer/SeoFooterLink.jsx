@@ -21,7 +21,7 @@ export default function SeoFooterLink() {
 
   return (
     <div style={{ padding: "10px", textAlign: "center", fontSize: "0.85rem", opacity: 0.6 }}>
-      <Link href={`/${nextInfo.slug}`} style={{ textDecoration: "underline" }}>{nextInfo.title}</Link>
+      <Link prefetch={false} href={`/${nextInfo.slug}`} style={{ textDecoration: "underline" }}>{nextInfo.title}</Link>
     </div>
   );
 }

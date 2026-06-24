@@ -36,7 +36,7 @@ export default function ProfessionalDesigners() {
         </div>
         
         <div className={styles.imageWrapper}>
-          <Image 
+          <Image unoptimized 
             src="/images/developers_vector.png" 
             alt="Web Developers Illustration" 
             width={600} 

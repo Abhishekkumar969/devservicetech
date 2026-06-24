@@ -14,7 +14,7 @@ export default function ProudlyPatna({ city = "India" }) {
             No matter where you are located, we deliver top-tier digital services right to you. DevService Tech is more than a standard agency; we are your dedicated tech partners. From new startups to large enterprises, our goal is to bring your digital dreams to life. Backed by an experienced and passionate team, we build stunning websites, smart software, and strong online strategies. We are committed to helping your brand succeed, scale up, and shine in the digital world.
           </p>
           
-          <Link href="/about-us" className={styles.link}>
+          <Link prefetch={false} href="/about-us" className={styles.link}>
             Learn More <ChevronRight size={20} />
           </Link>
         </div>

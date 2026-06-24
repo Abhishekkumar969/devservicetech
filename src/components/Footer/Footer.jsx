@@ -24,11 +24,11 @@ export default function Footer() {
           <div>
             <h3 className={styles.title}>SERVICES</h3>
             <ul className={styles.links}>
-              <li><Link href="/services" className={styles.link}>WEBSITE DESIGN</Link></li>
-              <li><Link href="/services" className={styles.link}>WEB DEVELOPMENT</Link></li>
-              <li><Link href="/services" className={styles.link}>DIGITAL MARKETING</Link></li>
-              <li><Link href="/services" className={styles.link}>SEARCH ENGINE OPTIMIZATION</Link></li>
-              <li><Link href="/services" className={styles.link}>WEB HOSTING</Link></li>
+              <li><Link prefetch={false} href="/services" className={styles.link}>WEBSITE DESIGN</Link></li>
+              <li><Link prefetch={false} href="/services" className={styles.link}>WEB DEVELOPMENT</Link></li>
+              <li><Link prefetch={false} href="/services" className={styles.link}>DIGITAL MARKETING</Link></li>
+              <li><Link prefetch={false} href="/services" className={styles.link}>SEARCH ENGINE OPTIMIZATION</Link></li>
+              <li><Link prefetch={false} href="/services" className={styles.link}>WEB HOSTING</Link></li>
             </ul>
           </div>
 
@@ -36,12 +36,12 @@ export default function Footer() {
           <div>
             <h3 className={styles.title}>COMPANY</h3>
             <ul className={styles.links}>
-              <li><Link href="/about-us" className={styles.link}>ABOUT</Link></li>
-              <li><Link href="/contact" className={styles.link}>FEEDBACK</Link></li>
-              <li><Link href="/contact" className={styles.link}>CONTACT US</Link></li>
-              <li><Link href="#" className={styles.link}>PRIVACY POLICY</Link></li>
-              <li><Link href="#" className={styles.link}>TERMS OF SERVICE</Link></li>
-              <li><Link href="/about-us" className={styles.link}>TIMELINE</Link></li>
+              <li><Link prefetch={false} href="/about-us" className={styles.link}>ABOUT</Link></li>
+              <li><Link prefetch={false} href="/contact" className={styles.link}>FEEDBACK</Link></li>
+              <li><Link prefetch={false} href="/contact" className={styles.link}>CONTACT US</Link></li>
+              <li><Link prefetch={false} href="#" className={styles.link}>PRIVACY POLICY</Link></li>
+              <li><Link prefetch={false} href="#" className={styles.link}>TERMS OF SERVICE</Link></li>
+              <li><Link prefetch={false} href="/about-us" className={styles.link}>TIMELINE</Link></li>
             </ul>
           </div>
 
@@ -49,7 +49,7 @@ export default function Footer() {
           <div>
             <h3 className={styles.title}>HELP DESK</h3>
             <ul className={styles.links}>
-              <li><Link href="/contact" className={styles.link}>CONTACT US</Link></li>
+              <li><Link prefetch={false} href="/contact" className={styles.link}>CONTACT US</Link></li>
             </ul>
           </div>
 

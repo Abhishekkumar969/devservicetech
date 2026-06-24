@@ -42,7 +42,7 @@ export default function FeaturedProjects() {
                 </div>
                 <h3 className={styles.cardTitle}>{project.title}</h3>
                 <p className={styles.cardDesc}>{project.desc}</p>
-                <Link href="/projects" className="btn btn-outline" style={{ width: "100%" }}>
+                <Link prefetch={false} href="/projects" className="btn btn-outline" style={{ width: "100%" }}>
                   View All Products
                 </Link>
               </div>

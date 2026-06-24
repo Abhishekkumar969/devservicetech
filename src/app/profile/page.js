@@ -70,7 +70,7 @@ export default function ProfilePage() {
           {purchases.length === 0 ? (
             <div className={styles.emptyState}>
               <p>You haven't purchased any projects yet.</p>
-              <Link href="/projects" className="btn btn-primary" style={{ marginTop: "1rem" }}>Browse Projects</Link>
+              <Link prefetch={false} href="/projects" className="btn btn-primary" style={{ marginTop: "1rem" }}>Browse Projects</Link>
             </div>
           ) : (
             <div className={styles.grid}>

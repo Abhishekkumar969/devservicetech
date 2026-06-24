@@ -14,13 +14,13 @@ export default function ServicesSplit() {
             <p className={styles.description}>
               Get a modern, fast, and mobile-friendly website that perfectly represents your brand and attracts more customers.
             </p>
-            <Link href="/contact?service=Website%20Design" className={styles.link}>
+            <Link prefetch={false} href="/contact?service=Website%20Design" className={styles.link}>
               Contact Now <ChevronRight size={20} />
             </Link>
           </div>
           
           <div className={styles.imageWrapper}>
-            <Image 
+            <Image unoptimized 
               src="/images/web_mockups.png" 
               alt="Web Design Mockups" 
               width={600} 
@@ -39,13 +39,13 @@ export default function ServicesSplit() {
             <p className={styles.description}>
               We build custom software, web apps, and digital tools designed to solve your unique business challenges and streamline your operations.
             </p>
-            <Link href="/contact?service=Software%20Development" className={styles.link}>
+            <Link prefetch={false} href="/contact?service=Software%20Development" className={styles.link}>
               Contact Now <ChevronRight size={20} />
             </Link>
           </div>
           
           <div className={styles.imageWrapper}>
-            <Image 
+            <Image unoptimized 
               src="/images/cafe_website.png" 
               alt="Software Development Campaign" 
               width={600} 

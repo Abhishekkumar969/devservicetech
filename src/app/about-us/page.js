@@ -23,7 +23,7 @@ export default function AboutUs() {
         {/* Section 2: Mission & Content */}
         <div className={styles.content}>
           <div className={styles.imageWrapper}>
-            <Image src="/images/team_office.png" alt="DevService Tech Team Office" width={800} height={500} style={{ width: "100%", height: "auto", borderRadius: "1rem", boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }} />
+            <Image unoptimized src="/images/team_office.png" alt="DevService Tech Team Office" width={800} height={500} style={{ width: "100%", height: "auto", borderRadius: "1rem", boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }} />
           </div>
 
           <div className={styles.textContent}>
@@ -35,7 +35,7 @@ export default function AboutUs() {
               With years of experience, a passionate team, and a portfolio of successful software products and websites, we specialize in crafting solutions that help your business grow, scale, and thrive online.
             </p>
             <div style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
-              <Link href="/contact" className="btn btn-primary hover-lift">
+              <Link prefetch={false} href="/contact" className="btn btn-primary hover-lift">
                 Work With Us
               </Link>
             </div>

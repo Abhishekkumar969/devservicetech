@@ -39,7 +39,7 @@ export default function InternshipPage() {
                   <strong>Skills Needed:</strong> {intern.skills}
                 </div>
               </div>
-              <Link href={`/contact?service=Internship%20Application`} className="btn btn-primary" style={{ width: "100%", marginTop: "1.5rem" }}>
+              <Link prefetch={false} href={`/contact?service=Internship%20Application`} className="btn btn-primary" style={{ width: "100%", marginTop: "1.5rem" }}>
                 Apply Now
               </Link>
             </div>

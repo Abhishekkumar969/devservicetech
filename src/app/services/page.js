@@ -96,7 +96,7 @@ export default function Services() {
           
           <div style={{ textAlign: "center", marginTop: "4rem" }}>
             <h3 style={{ marginBottom: "1rem", fontSize: "1.5rem" }}>Ready to start your project?</h3>
-            <Link href="/contact" className="btn btn-primary">Let's Talk</Link>
+            <Link prefetch={false} href="/contact" className="btn btn-primary">Let's Talk</Link>
           </div>
         </div>
       </div>

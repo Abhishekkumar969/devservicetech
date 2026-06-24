@@ -12,8 +12,8 @@ export default function CallToAction() {
             Partner with DevService Tech to build scalable software, high-converting websites, and data-driven marketing campaigns. Let's create something extraordinary together.
           </p>
           <div className={styles.buttonGroup}>
-            <Link href="/contact" className={`btn btn-primary ${styles.ctaBtn}`}>Start Your Project</Link>
-            <Link href="/services" className={`btn btn-outline ${styles.secondaryBtn}`}>Explore Services</Link>
+            <Link prefetch={false} href="/contact" className={`btn btn-primary ${styles.ctaBtn}`}>Start Your Project</Link>
+            <Link prefetch={false} href="/services" className={`btn btn-outline ${styles.secondaryBtn}`}>Explore Services</Link>
           </div>
         </div>
       </div>

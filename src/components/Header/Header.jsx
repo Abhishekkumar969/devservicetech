@@ -42,7 +42,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.headerInner}`}>
         <nav className={`${styles.nav} ${isOpen ? styles.navOpen : ""}`}>
-          <Link href="/" className={styles.logoContainer}>
+          <Link prefetch={false} prefetch={false} href="/" className={styles.logoContainer}>
             <div className={styles.logoTextWrapper}>
               <span className={styles.logoMain}>DevService</span>
               <span className={styles.logoSub}>TECH</span>
@@ -54,6 +54,7 @@ export default function Header() {
             {navLinks.map((link) => (
               <li key={link.name}>
                 <Link
+                  prefetch={false}
                   href={link.path}
                   className={`${styles.menuItem} ${
                     pathname === link.path ? styles.active : ""
@@ -68,6 +69,7 @@ export default function Header() {
               <>
                 <li>
                   <Link
+                    prefetch={false}
                     href="/cart"
                     className={`${styles.menuItem} ${
                       pathname === "/cart" ? styles.active : ""
@@ -79,6 +81,7 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
+                    prefetch={false}
                     href="/profile"
                     className={`${styles.menuItem} ${
                       pathname === "/profile" ? styles.active : ""
@@ -93,6 +96,7 @@ export default function Header() {
             ) : (
               <li>
                 <Link
+                  prefetch={false}
                   href="/login"
                   className={`${styles.menuItem} ${
                     pathname === "/login" ? styles.active : ""
