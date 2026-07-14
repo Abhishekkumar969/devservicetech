@@ -1,4 +1,5 @@
 import ServicesGrid from "../../components/ServicesGrid/ServicesGrid";
+import OurBrands from "../../components/OurBrands/OurBrands";
 import styles from "./page.module.css";
 import Link from "next/link";
 
@@ -11,18 +12,13 @@ export default function Services() {
   return (
     <div className={styles.pageContainer}>
       
-      {/* Section 1: Intro */}
-      <div className="container" style={{ textAlign: "center", paddingBottom: "2rem" }}>
-        <h1 className={styles.mainTitle}>
-          What We <span className="text-gradient">Do</span>
-        </h1>
-        <p className={styles.mainDescription}>
-          We provide a 360° suite of digital services designed to elevate your brand. From custom software development and fast websites to comprehensive digital campaigns, we ensure you stand out.
-        </p>
-      </div>
+
 
       {/* Section 2: Services Grid */}
       <ServicesGrid />
+
+      {/* Section 2.5: Our Brands */}
+      <OurBrands />
 
       {/* Section 3: Our Development Process */}
       <div className={styles.processSection}>

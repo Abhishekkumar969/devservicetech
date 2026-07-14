@@ -2,6 +2,8 @@ import { allIndianCities } from "@/data/cities";
 
 export const variations = [
   "Website Designers Company in",
+  "Website Designers in",
+  "Software Development Company in",
   "Software Development Company in",
   "Best Website Development Company in",
   "Ecommerce Website Development Company in",

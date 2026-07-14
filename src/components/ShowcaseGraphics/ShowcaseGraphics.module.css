@@ -211,6 +211,13 @@
     flex-direction: column;
     text-align: center;
   }
+  .visuals {
+    width: 100%;
+  }
+  .designBoard {
+    width: 100%;
+    max-width: 100%;
+  }
   .textContent {
     margin-bottom: 3rem;
   }

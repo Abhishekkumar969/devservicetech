@@ -196,6 +196,9 @@
     text-align: center;
     gap: 3rem;
   }
+  .visuals {
+    width: 100%;
+  }
   .textContent {
     margin-bottom: 2rem;
   }
@@ -217,7 +220,8 @@
     transform-origin: bottom left;
   }
   .chartContainer {
-    max-width: 90%;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
   }
   .bars {

@@ -1,6 +1,7 @@
 :root {
   /* DevService Tech Theme Colors - Light Green & Yellowish */
   --primary: #84cc16;
+  --primary-rgb: 132, 204, 22;
   /* Light Green */
   --primary-light: #a3e635;
   --primary-dark: #84cc16;

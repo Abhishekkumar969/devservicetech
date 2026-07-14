@@ -4,22 +4,18 @@ import { useState, useEffect } from "react";
 import styles from "./page.module.css";
 import useCartStore from "@/store/cartStore";
 import { useRouter } from "next/navigation";
-import { auth } from "@/lib/firebase";
+import { auth, db } from "@/lib/firebase";
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
-
-const projects = [
-  { id: "proj_1", title: "E-Commerce Platform", category: "Web Development", desc: "A high-performance online store for a local retail brand.", price: 4999 },
-  { id: "proj_2", title: "Healthcare App UI/UX", category: "App Design", desc: "Intuitive appointment booking and tracking application.", price: 2499 },
-  { id: "proj_3", title: "Real Estate Portal", category: "Web Design", desc: "Dynamic property listing platform with advanced search.", price: 3999 },
-  { id: "proj_4", title: "SEO Campaign Growth", category: "Software Development", desc: "300% organic traffic growth for a local service business.", price: 1999 },
-  { id: "proj_5", title: "EduTech Dashboard", category: "Software Development", desc: "Comprehensive LMS dashboard for online tutors.", price: 5999 },
-  { id: "proj_6", title: "Restaurant Branding", category: "E-Commerce Solutions", desc: "Complete visual identity and menu design for a modern cafe.", price: 1499 },
-];
+import { collection, getDocs } from "firebase/firestore";
 
 export default function ProjectsPage() {
   const addToCart = useCartStore((state) => state.addToCart);
   const cart = useCartStore((state) => state.cart);
   const router = useRouter();
+
+  // Data State
+  const [projects, setProjects] = useState([]);
+  const [loadingProducts, setLoadingProducts] = useState(true);
 
   // Modal State
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -46,6 +42,30 @@ export default function ProjectsPage() {
     return () => unsubscribe();
   }, []);
 
+  // Fetch products
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const productsRef = collection(db, 'Products');
+        const snapshot = await getDocs(productsRef);
+        const projectsData = [];
+        snapshot.forEach((doc) => {
+          const data = doc.data();
+          if (data.isActive) {
+            projectsData.push({ id: doc.id, ...data });
+          }
+        });
+        setProjects(projectsData);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      } finally {
+        setLoadingProducts(false);
+      }
+    };
+    
+    fetchProjects();
+  }, []);
+
   const handleAddToCart = (project) => {
     if (!user) {
       setPendingProject(project);
@@ -66,7 +86,6 @@ export default function ProjectsPage() {
       if (isSignup) {
         const { createUserWithEmailAndPassword } = await import("firebase/auth");
         const { doc, setDoc } = await import("firebase/firestore");
-        const { db } = await import("@/lib/firebase");
 
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         await setDoc(doc(db, "users", userCredential.user.uid), {
@@ -92,7 +111,6 @@ export default function ProjectsPage() {
 
       // Ensure profile exists in DB
       const { doc, setDoc } = await import("firebase/firestore");
-      const { db } = await import("@/lib/firebase");
       await setDoc(doc(db, "users", userCredential.user.uid), {
         name: userCredential.user.displayName,
         email: userCredential.user.email,
@@ -116,14 +134,19 @@ export default function ProjectsPage() {
           </p>
         </div>
 
-        <div className={styles.grid}>
-          {projects.map((project) => {
-            const inCart = user && cart.some(item => item.id === project.id);
-            return (
-              <div key={project.id} className={styles.card}>
-                <div className={styles.cardImage}>
-                  [ Project Image ]
-                </div>
+        {loadingProducts ? (
+          <div style={{ textAlign: "center", padding: "4rem", color: "#64748b" }}>Loading products...</div>
+        ) : projects.length === 0 ? (
+          <div style={{ textAlign: "center", padding: "4rem", color: "#64748b" }}>No active products available.</div>
+        ) : (
+          <div className={styles.grid}>
+            {projects.map((project) => {
+              const inCart = user && cart.some(item => item.id === project.id);
+              return (
+                <div key={project.id} className={styles.card}>
+                  <div className={styles.cardImage} style={{ background: project.imageUrl ? `url(${project.imageUrl}) center/cover no-repeat` : '#e2e8f0' }}>
+                    {!project.imageUrl && <span style={{ color: '#94a3b8' }}>[ Project Image ]</span>}
+                  </div>
                 <div className={styles.cardBody}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
                     <span className={styles.category}>{project.category}</span>
@@ -149,6 +172,7 @@ export default function ProjectsPage() {
             );
           })}
         </div>
+        )}
       </div>
 
       {/* Auth Modal */}

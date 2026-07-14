@@ -1,18 +1,43 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 import styles from "./FeaturedProjects.module.css";
 import useCartStore from "@/store/cartStore";
 import { useRouter } from "next/navigation";
 
-const projects = [
-  { id: "proj_1", title: "E-Commerce Platform", category: "Web Development", desc: "A high-performance online store for a local retail brand.", price: 4999 },
-  { id: "proj_2", title: "Healthcare App UI/UX", category: "App Design", desc: "Intuitive appointment booking and tracking application.", price: 2499 },
-  { id: "proj_4", title: "SEO Campaign Growth", category: "Software Development", desc: "300% organic traffic growth for a local service business.", price: 1999 },
-];
-
 export default function FeaturedProjects() {
   const router = useRouter();
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const productsRef = collection(db, 'Products');
+        const snapshot = await getDocs(productsRef);
+        const projectsData = [];
+        snapshot.forEach((doc) => {
+          const data = doc.data();
+          if (data.isActive) {
+            projectsData.push({ id: doc.id, ...data });
+          }
+        });
+        setProjects(projectsData);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchProjects();
+  }, []);
+
+  if (loading) return null; // Can replace with skeleton loader
+  if (projects.length === 0) return null;
 
   return (
     <section className={styles.section}>
@@ -27,8 +52,8 @@ export default function FeaturedProjects() {
         <div className={styles.grid}>
           {projects.map((project) => (
             <div key={project.id} className={styles.card}>
-              <div className={styles.cardImage}>
-                [ Project Image ]
+              <div className={styles.cardImage} style={{ background: project.imageUrl ? `url(${project.imageUrl}) center/cover no-repeat` : '#e2e8f0' }}>
+                {!project.imageUrl && <span style={{ color: '#94a3b8' }}>[ Project Image ]</span>}
               </div>
               <div className={styles.cardBody}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
@@ -42,9 +67,14 @@ export default function FeaturedProjects() {
                 </div>
                 <h3 className={styles.cardTitle}>{project.title}</h3>
                 <p className={styles.cardDesc}>{project.desc}</p>
-                <Link prefetch={false} href="/projects" className="btn btn-outline" style={{ width: "100%" }}>
-                  View All Products
-                </Link>
+                <div style={{ display: "flex", gap: "0.5rem", marginTop: "1rem" }}>
+                  <Link href={`/preview/${project.id}`} className="btn btn-outline" style={{ flex: 1, textAlign: "center", padding: "0.5rem" }}>
+                    Live Preview
+                  </Link>
+                  <Link href={`/checkout/${project.id}`} className="btn btn-primary" style={{ flex: 1, textAlign: "center", padding: "0.5rem" }}>
+                    Buy Now
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

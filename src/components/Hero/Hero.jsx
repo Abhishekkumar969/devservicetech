@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import ContactForm from "../ContactForm/ContactForm";
 import styles from "./Hero.module.css";
 import { ChevronRight } from "lucide-react";
 
@@ -28,9 +28,9 @@ export default function Hero({ city = "India" }) {
             </div>
           </div>
 
-          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginTop: "1.5rem" }}>
-            <Link prefetch={false} href="/contact" className={styles.link}>
-              Get Started <ChevronRight size={20} />
+          <div className={styles.buttonGroup}>
+            <Link prefetch={false} href="/services" className="btn btn-primary" style={{ color: "var(--foreground)" }}>
+              Our Services
             </Link>
             <Link prefetch={false} href="/projects" className="btn btn-secondary" style={{ color: "var(--foreground)" }}>
               Our Super Projects
@@ -38,16 +38,8 @@ export default function Hero({ city = "India" }) {
           </div>
         </div>
         
-        <div className={styles.imageWrapper} style={{ pointerEvents: 'none' }}>
-          <Image unoptimized 
-            src="/images/hero_image.png" 
-            alt="DevService Tech (Development and service technology) Team" 
-            width={600} 
-            height={500} 
-            className={styles.image}
-            priority
-            draggable={false}
-          />
+        <div style={{ flex: 1, maxWidth: "500px", width: "100%", margin: "0 auto" }}>
+          <ContactForm title="Get a Free Quote" />
         </div>
       </div>
     </section>

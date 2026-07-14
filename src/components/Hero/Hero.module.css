@@ -1,7 +1,52 @@
 .hero {
   padding: 4rem 0 6rem;
-  background-color: var(--background-alt);
+  background-color: var(--background);
+  position: relative;
   overflow: hidden;
+}
+
+/* The Animated Box Grid */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50%; left: -50%; right: -50%; bottom: -50%;
+  background-image: 
+    linear-gradient(rgba(var(--primary-rgb), 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--primary-rgb), 0.08) 1px, transparent 1px);
+  background-size: 80px 80px;
+  background-position: center;
+  z-index: 0;
+  /* Fade out edges for a premium look */
+  -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 70%);
+  mask-image: radial-gradient(circle at center, black 30%, transparent 70%);
+  animation: moveBoxes 30s linear infinite;
+}
+
+@keyframes moveBoxes {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(80px, 80px); }
+}
+
+/* Glowing Aurora Orb */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vw;
+  max-width: 800px;
+  max-height: 800px;
+  background: radial-gradient(circle, rgba(var(--primary-rgb), 0.15) 0%, transparent 50%);
+  z-index: 0;
+  pointer-events: none;
+  animation: pulseGlow 10s infinite alternate ease-in-out;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes pulseGlow {
+  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
 }
 
 .container {
@@ -11,6 +56,8 @@
   display: flex;
   align-items: center;
   gap: 4rem;
+  position: relative;
+  z-index: 2;
 }
 
 .content {
@@ -86,6 +133,13 @@
   display: block;
 }
 
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
 @media (max-width: 992px) {
   .container {
     flex-direction: column;
@@ -98,6 +152,10 @@
   }
 
   .featuresList {
+    justify-content: center;
+  }
+
+  .buttonGroup {
     justify-content: center;
   }
 }

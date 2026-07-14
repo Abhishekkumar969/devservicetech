@@ -5,6 +5,7 @@ import ProfessionalDesigners from "../ProfessionalDesigners/ProfessionalDesigner
 import ProudlyPatna from "../ProudlyPatna/ProudlyPatna";
 import ServicesSplit from "../ServicesSplit/ServicesSplit";
 import ServicesGrid from "../ServicesGrid/ServicesGrid";
+import OurBrands from "../OurBrands/OurBrands";
 import FeaturedProjects from "../FeaturedProjects/FeaturedProjects";
 import ShowcaseWebDesign from "../ShowcaseWebDesign/ShowcaseWebDesign";
 import ShowcaseSoftware from "../ShowcaseSoftware/ShowcaseSoftware";
@@ -23,12 +24,18 @@ export default function HomeContent({ city = "India" }) {
     <>
       <Hero city={city} />
       <ClientsMarquee />
-      <AboutIntro city={city} />
-      <ProfessionalDesigners />
-      <ProudlyPatna city={city} />
+      
+      {/* Moved up as requested */}
+      <StatsCounter />
+      <OurBrands />
       <ServicesSplit />
       <ServicesGrid />
       <FeaturedProjects />
+
+      {/* "Our Strategic Digital Partner" section and below */}
+      <AboutIntro city={city} />
+      <ProfessionalDesigners />
+      <ProudlyPatna city={city} />
       
       {/* Mega Showcase Sections with Ambient Fog */}
       <div className={styles.showcaseWrapper}>
@@ -42,7 +49,6 @@ export default function HomeContent({ city = "India" }) {
         <ShowcaseMarketing />
       </div>
 
-      <StatsCounter />
       <ProcessSteps />
       <CoreValues />
       <Testimonials />

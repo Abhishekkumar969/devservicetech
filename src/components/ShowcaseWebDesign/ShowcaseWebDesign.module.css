@@ -164,6 +164,13 @@
     flex-direction: column;
     text-align: center;
   }
+  .visuals {
+    width: 100%;
+  }
+  .laptopMockup {
+    width: 100%;
+    max-width: 100%;
+  }
 
   .textContent {
     margin-bottom: 3rem;
@@ -196,6 +203,7 @@
   }
   .laptopScreen {
     border-width: 8px;
+    width: 100%;
   }
   .placeholderContent {
     font-size: 0.8rem;

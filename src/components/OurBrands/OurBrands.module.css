@@ -1,0 +1,88 @@
+.section {
+  padding: 4rem 0;
+  background-color: var(--background);
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-playfair), serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 2rem;
+}
+
+.brandsContainer {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  overflow-x: auto;
+  padding: 1rem 0.5rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.brandsContainer::-webkit-scrollbar {
+  height: 6px;
+}
+
+.brandsContainer::-webkit-scrollbar-track {
+  background: var(--background-alt);
+  border-radius: 10px;
+}
+
+.brandsContainer::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+.brandCard {
+  flex: 0 0 auto; /* Prevent cards from shrinking */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.brandCard:hover {
+  transform: translateY(-5px);
+}
+
+.imageWrapper {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-alt);
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.brandCard:hover .imageWrapper {
+  box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+  border-color: var(--primary-light);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brandName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+  transition: color 0.3s ease;
+}
+
+.brandCard:hover .brandName {
+  color: var(--primary);
+}

@@ -101,7 +101,7 @@
 
 .techBadge:hover {
   background: var(--primary-light);
-  color: var(--primary-dark);
+  color: white;
   border-color: var(--primary-light);
 }
 
